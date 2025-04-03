@@ -8,11 +8,12 @@ const config: Config = {
         pretendard: ['var(--font-pretendard)'],
       },
       colors: {
-        // 핑크 계열 색상
+        // Primary Color
         p1: '#FF6B6B',
         p2: '#FFB3BA',
         p3: '#FFE8EC',
 
+        // Grey Scale
         g1: '#0D0D0D',
         g2: '#262626',
         g3: '#4D4D4D',
@@ -22,6 +23,9 @@ const config: Config = {
         g7: '#E5E5E5',
         g8: '#F2F2F2',
         g9: '#FFFFFF',
+
+        // Status Color
+        a: '#FF2A2A',
       },
       lineHeight: {
         '140': '140%',

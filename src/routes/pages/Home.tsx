@@ -8,7 +8,7 @@ export default function Home() {
       <StyledText style={TextStyle.B1} className="text-p1">
         여유있냥
       </StyledText>
-      <StyledText style={TextStyle.R1} className="text-p2">
+      <StyledText style={TextStyle.R1} className="text-a">
         나는 west kite에요~
       </StyledText>
     </div>
