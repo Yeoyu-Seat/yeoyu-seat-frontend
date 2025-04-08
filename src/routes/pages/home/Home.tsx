@@ -1,16 +1,17 @@
-import { StyledText } from '../../../components/StyledText';
-import { TextStyle } from '../../../styles/TextStyle';
+import KakaoMap from '../../../components/KakaoMap';
 
 export default function Home() {
   return (
-    <div className="flex h-screen flex-col items-center justify-center gap-4">
-      {/* <h1 className="text-5xl font-bold">여유있냥</h1> */}
-      <StyledText style={TextStyle.B1} className="text-p1">
-        여유있냥
-      </StyledText>
-      <StyledText style={TextStyle.R1} className="text-a">
-        나는 west kite에요~
-      </StyledText>
+    <div
+      style={{
+        width: '100vw',
+        height: '100vh',
+        margin: 0,
+        padding: 0,
+        overflow: 'hidden',
+      }}
+    >
+      <KakaoMap width="100%" height="100%" />
     </div>
   );
 }
