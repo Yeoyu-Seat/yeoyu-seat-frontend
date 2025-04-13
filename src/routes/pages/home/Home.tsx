@@ -1,6 +1,7 @@
 import KakaoMap from '../../../components/KakaoMap';
 import { CongestionButton } from '@/components/features/CongestionButton';
 import { SearchBox } from '@/components/features/SearchBox';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
 export default function Home() {
@@ -51,6 +52,33 @@ export default function Home() {
         }}
       >
         <SearchBox />
+
+        <div className="hide-scrollbar mt-2 flex flex-row gap-1 overflow-x-auto px-1 pb-2">
+          <Badge
+            variant="default"
+            className="flex-shrink-0 cursor-pointer whitespace-nowrap"
+          >
+            영업 중
+          </Badge>
+          <Badge
+            variant="default"
+            className="flex-shrink-0 cursor-pointer whitespace-nowrap"
+          >
+            혼잡도 낮은 순
+          </Badge>
+          <Badge
+            variant="default"
+            className="flex-shrink-0 cursor-pointer whitespace-nowrap"
+          >
+            가까운 순
+          </Badge>
+          <Badge
+            variant="default"
+            className="flex-shrink-0 cursor-pointer whitespace-nowrap"
+          >
+            추천 순
+          </Badge>
+        </div>
       </div>
     </div>
   );
