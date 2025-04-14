@@ -70,3 +70,18 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+html,
+body {
+  touch-action: manipulation;
+}
+
+body {
+  user-select: none;
+}
+
+input,
+textarea,
+[contenteditable='true'] {
+  user-select: text;
+}
