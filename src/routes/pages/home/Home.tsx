@@ -12,22 +12,23 @@ export default function Home() {
   ];
 
   return (
-    <div className="relative h-screen w-screen overflow-hidden">
-      {/* 지도  */}
+    <div className="relative h-screen w-full overflow-hidden">
+      {/* 지도 */}
       <div className="absolute inset-0 z-0">
         <KakaoMap width="100%" height="100%" />
       </div>
 
       {/* 검색창 */}
-      <div className="absolute left-1/2 top-10 z-20 w-[90%] max-w-[500px] -translate-x-1/2">
+      <div className="absolute left-0 right-0 top-10 z-20 mx-auto w-[90%]">
         <SearchBox />
       </div>
 
       {/* 필터 칩 */}
-      <div className="absolute left-1/2 top-[calc(2.5rem+44px+0.7rem)] z-10 w-[90%] max-w-[500px] -translate-x-1/2">
+      <div className="absolute left-0 right-0 top-[calc(2.5rem+44px+0.7rem)] z-10 mx-auto w-[90%]">
         <Chips items={chipItems} />
       </div>
 
+      {/* 홈 드로어 */}
       <div>
         <HomeDrawer />
       </div>

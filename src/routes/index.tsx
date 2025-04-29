@@ -3,6 +3,7 @@ import DefaultLayout from './layouts/Default';
 import Bookmark from './pages/bookmark/Bookmark';
 import Coupon from './pages/coupon/Coupon';
 import Home from './pages/home/Home';
+import Search from './pages/home/Search';
 import MyPage from './pages/mypage/MyPage';
 
 const router = createBrowserRouter([
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
       { path: '/bookmark', element: <Bookmark /> },
       { path: '/coupon', element: <Coupon /> },
       { path: '/mypage', element: <MyPage /> },
+      { path: '/search', element: <Search /> },
     ],
   },
 ]);
