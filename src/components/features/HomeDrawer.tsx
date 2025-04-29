@@ -21,14 +21,14 @@ export function HomeDrawer() {
       modal={false}
       defaultOpen={true}
     >
-      <DrawerContent className="h-full max-h-[80%] w-full flex-shrink-0">
+      <DrawerContent className="mx-auto h-full max-h-[80%] w-full min-w-[320px] max-w-[412px] flex-shrink-0">
         {/* 스크린 리더를 위한 접근성 타이틀 (화면에는 보이지 않음) */}
         <DrawerTitle className="sr-only"></DrawerTitle>
         <DrawerDescription className="sr-only"></DrawerDescription>
 
         {/* 드로어 내부 컨텐츠 컨테이너 */}
         <div
-          className={clsx('flex min-w-[320px] flex-col px-4', {
+          className={clsx('flex flex-col px-4', {
             'overflow-y-auto': activeSnap === snapPoints[2],
             'overflow-hidden': activeSnap !== snapPoints[2],
           })}

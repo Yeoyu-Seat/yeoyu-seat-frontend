@@ -67,10 +67,7 @@ export function SearchBox() {
   }, []);
 
   return (
-    <Command
-      className="rounded-xl border shadow-md md:min-w-[320px]"
-      ref={commandRef}
-    >
+    <Command className="rounded-xl border shadow-md" ref={commandRef}>
       {/* 검색 헤더 영역 */}
       <div className="flex items-center justify-between border-b">
         {/* 검색/뒤로가기 버튼 */}
