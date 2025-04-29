@@ -1,5 +1,6 @@
 import KakaoMap from '../../../components/KakaoMap';
 import { ChipItem, Chips } from '@/components/features/Chips';
+import { HomeDrawer } from '@/components/features/HomeDrawer';
 import { SearchBox } from '@/components/features/SearchBox';
 
 export default function Home() {
@@ -25,6 +26,10 @@ export default function Home() {
       {/* 필터 칩 */}
       <div className="absolute left-1/2 top-[calc(2.5rem+44px+0.7rem)] z-10 w-[90%] max-w-[500px] -translate-x-1/2">
         <Chips items={chipItems} />
+      </div>
+
+      <div>
+        <HomeDrawer />
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import { useDrawer } from '@/contexts/DrawerContext';
 import { Link, useLocation } from 'react-router-dom';
 import { TextStyle } from '../styles/TextStyle';
 import { StyledText } from './StyledText';
@@ -10,6 +11,7 @@ interface NavTab {
 
 export default function AppBar() {
   const location = useLocation();
+  const { toggleHomeDrawer } = useDrawer();
 
   const navTabs: NavTab[] = [
     {
@@ -46,6 +48,12 @@ export default function AppBar() {
     }
   }
 
+  const handleHomeClick = () => {
+    if (location.pathname === '/') {
+      toggleHomeDrawer();
+    }
+  };
+
   return (
     <div className="fixed bottom-0 z-10 flex h-[92px] w-full min-w-[200px] border-t border-g7 bg-g9 px-[2%] shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
       {navTabs.map((tab, index) => (
@@ -53,7 +61,11 @@ export default function AppBar() {
           key={index}
           className="relative flex h-full w-1/4 items-center justify-center"
         >
-          <Link to={tab.path} className="no-underline">
+          <Link
+            to={tab.path}
+            className="no-underline"
+            onClick={tab.path === '/' ? handleHomeClick : undefined}
+          >
             <div
               className={`flex flex-col items-center justify-center ${isActiveTab(tab.path) ? 'text-g1' : 'text-g4'}`}
             >

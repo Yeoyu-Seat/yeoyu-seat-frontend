@@ -68,7 +68,7 @@ export function SearchBox() {
 
   return (
     <Command
-      className="rounded-xl border shadow-md md:min-w-[450px]"
+      className="rounded-xl border shadow-md md:min-w-[320px]"
       ref={commandRef}
     >
       {/* 검색 헤더 영역 */}
@@ -79,6 +79,7 @@ export function SearchBox() {
           size="icon"
           onClick={isActive ? handleBack : toggleActive}
           className="flex-shrink-0"
+          tabIndex={-1}
         >
           {isActive ? <ChevronLeft /> : <Search />}
         </Button>
@@ -92,6 +93,7 @@ export function SearchBox() {
             onValueChange={handleValueChange}
             onFocus={handleFocus}
             className="w-full"
+            tabIndex={-1}
           />
         </div>
 
@@ -101,6 +103,7 @@ export function SearchBox() {
           size="icon"
           onClick={handleClear}
           className="flex-shrink-0"
+          tabIndex={-1}
         >
           {query && <X className="text-g5" />}
         </Button>

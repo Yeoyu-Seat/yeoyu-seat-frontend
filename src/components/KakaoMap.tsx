@@ -9,7 +9,7 @@ interface KakaoMapProps {
 
 const KakaoMap: React.FC<KakaoMapProps> = ({
   width = '100%',
-  height = '100%x',
+  height = '100%',
   className = '',
 }) => {
   // 국민은행 세종대의 좌표를 기본값으로 설정
