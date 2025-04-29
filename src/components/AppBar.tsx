@@ -55,7 +55,7 @@ export default function AppBar() {
   };
 
   return (
-    <div className="fixed bottom-0 z-10 flex h-[92px] w-full min-w-[200px] border-t border-g7 bg-g9 px-[2%] shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+    <div className="fixed bottom-0 z-10 flex h-[92px] w-full min-w-[320px] border-t border-g7 bg-g9 px-[2%] shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
       {navTabs.map((tab, index) => (
         <div
           key={index}
