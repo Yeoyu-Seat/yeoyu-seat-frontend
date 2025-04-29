@@ -21,7 +21,7 @@ export default function DefaultLayout() {
 
   return (
     <DrawerProvider>
-      <div className="touch-manipulation select-none overflow-x-auto">
+      <div className="touch-manipulation select-none overflow-x-hidden">
         <Outlet />
         <AppBar />
       </div>

@@ -5,6 +5,9 @@ const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      maxWidth: {
+        mobile: '500px', // 원하는 모바일 너비를 여기서 설정
+      },
       fontFamily: {
         pretendard: ['var(--font-pretendard)'],
       },

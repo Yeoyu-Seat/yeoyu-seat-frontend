@@ -48,6 +48,7 @@ export default function AppBar() {
     }
   }
 
+  /* 홈 탭 클릭 시 처리 함수 - 이미 홈 화면인 경우에만 드로어를 토글 */
   const handleHomeClick = () => {
     if (location.pathname === '/') {
       toggleHomeDrawer();
@@ -55,38 +56,44 @@ export default function AppBar() {
   };
 
   return (
-    <div className="fixed bottom-0 z-10 flex h-[92px] w-full min-w-[320px] border-t border-g7 bg-g9 px-[2%] shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
-      {navTabs.map((tab, index) => (
-        <div
-          key={index}
-          className="relative flex h-full w-1/4 items-center justify-center"
-        >
-          <Link
-            to={tab.path}
-            className="no-underline"
-            onClick={tab.path === '/' ? handleHomeClick : undefined}
+    <div className="max-w-mobile fixed bottom-0 left-0 right-0 z-10 mx-auto flex h-[92px] w-full border-t border-g7 bg-g9 px-[2%] shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+      {navTabs.map((tab, index) => {
+        // 현재 탭이 활성화 상태인지 확인
+        const active = isActiveTab(tab.path);
+
+        return (
+          <div
+            key={index}
+            className="relative flex h-full w-1/4 items-center justify-center"
           >
-            <div
-              className={`flex flex-col items-center justify-center ${isActiveTab(tab.path) ? 'text-g1' : 'text-g4'}`}
+            <Link
+              to={tab.path}
+              className="no-underline"
+              onClick={tab.path === '/' ? handleHomeClick : undefined}
             >
-              <img
-                src={tab.iconSrc}
-                alt={`${tab.name} 아이콘`}
-                className="h-6 w-6"
-                style={{
-                  filter: isActiveTab(tab.path) ? 'invert(50%)' : 'invert(0%)',
-                }}
-              />
-              <StyledText
-                style={TextStyle.R4}
-                className={`mb-6 mt-1 ${isActiveTab(tab.path) ? 'text-g1' : 'text-g4'}`}
-              >
-                {tab.name}
-              </StyledText>
-            </div>
-          </Link>
-        </div>
-      ))}
+              <div className="flex flex-col items-center justify-center">
+                {/* 탭 아이콘 */}
+                <img
+                  src={tab.iconSrc}
+                  alt={`${tab.name} 아이콘`}
+                  className="h-6 w-6"
+                  style={{
+                    filter: active ? 'invert(50%)' : 'invert(0%)',
+                  }}
+                />
+
+                {/* 탭 이름 */}
+                <StyledText
+                  style={TextStyle.R4}
+                  className={`mb-6 mt-1 ${active ? 'text-g1' : 'text-g4'}`}
+                >
+                  {tab.name}
+                </StyledText>
+              </div>
+            </Link>
+          </div>
+        );
+      })}
     </div>
   );
 }

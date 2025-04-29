@@ -85,3 +85,13 @@ textarea,
 [contenteditable='true'] {
   user-select: text;
 }
+
+@layer components {
+  #root {
+    @apply max-w-mobile relative mx-auto min-h-screen w-full bg-g9 shadow-md;
+  }
+
+  body {
+    @apply bg-g8;
+  }
+}
