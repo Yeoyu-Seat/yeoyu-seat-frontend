@@ -1,3 +1,4 @@
+import { DrawerProvider } from '@/contexts/DrawerContext';
 import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import AppBar from '../../components/AppBar';
@@ -19,9 +20,11 @@ export default function DefaultLayout() {
   }, []);
 
   return (
-    <div className="touch-manipulation select-none">
-      <Outlet />
-      <AppBar />
-    </div>
+    <DrawerProvider>
+      <div className="touch-manipulation select-none overflow-x-auto">
+        <Outlet />
+        <AppBar />
+      </div>
+    </DrawerProvider>
   );
 }
